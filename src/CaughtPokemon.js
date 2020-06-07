@@ -8,6 +8,7 @@ const CaughtPokemon = (props) => {
   const incrementTotal =() =>{
     const s = totalCaught.concat(pokemonNameInput);
         setTotalCaught(s)
+        setPokemonNameInput("")
   }
   const handleInputChange =(event) => {
     console.log(event.target.value);
