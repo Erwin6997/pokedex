@@ -8,7 +8,7 @@ const BestPokemonFetcher = (props) =>{
     .then(data => setBestPokemon(data));
   }, [props.pokemonId])
     if (!bestPokemon) {
-      return null 
+      return (<div>Loading . . . </div>) 
 
     }else{
       return <BestPokemon pokemon={bestPokemon} />
@@ -34,8 +34,6 @@ function BestPokemonSelector() {
 }
 
 const BestPokemon = (props) => {
-
-console.log("data:"+props.pokemon);
   return (
     <div>
       <p>My favourite Pokemon is Squirtle</p>

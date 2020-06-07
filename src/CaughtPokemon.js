@@ -8,7 +8,7 @@ const CaughtPokemon = (props) => {
   }
   return(
     <div>
-      <p>Caught {totalCaught} Pokemon on {props.date}</p>;
+      <p>Caught {totalCaught} Pokemon on {props.date}</p>
       <button onClick={incrementTotal}> Add </button>
     </div>
     
