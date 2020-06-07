@@ -2,17 +2,31 @@ import React,{useState} from "react";
 
 const CaughtPokemon = (props) => {
 
-  const [totalCaught, setTotalCaught] = useState(2);
+  const [totalCaught, setTotalCaught] = useState([]);
+  const [pokemonNameInput, setPokemonNameInput] = useState("");
+  // const [caughtPokemon, setCaughtPokemon] = useState([]);
   const incrementTotal =() =>{
-        setTotalCaught(totalCaught + 1)
+    const s = totalCaught.concat(pokemonNameInput);
+        setTotalCaught(s)
+  }
+  const handleInputChange =(event) => {
+    console.log(event.target.value);
+    setPokemonNameInput(event.target.value)
   }
   return(
     <div>
-      <p>Caught {totalCaught} Pokemon on {props.date}</p>
+      <p>Caught {totalCaught.length} Pokemon on {props.date}</p>
+      <ul>
+        {
+          totalCaught.map((element , index) => {
+            return <li key={index}>{element}</li>
+          })
+        }
+      </ul>
+      <input type="text" value={pokemonNameInput} onChange={handleInputChange}/>
       <button onClick={incrementTotal}> Add </button>
     </div>
     
     ) 
 };
-
 export default CaughtPokemon;

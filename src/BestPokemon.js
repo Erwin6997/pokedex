@@ -3,12 +3,15 @@ import React,{useState, useEffect} from "react";
 const BestPokemonFetcher = (props) =>{
   const [bestPokemon,setBestPokemon] = useState(null);
   useEffect(() =>{
+    setBestPokemon(null);
     fetch(`https://pokeapi.co/api/v2/pokemon/${props.pokemonId}/`)
     .then(res => res.json())
     .then(data => setBestPokemon(data));
   }, [props.pokemonId])
     if (!bestPokemon) {
-      return (<div>Loading . . . </div>) 
+      return (<div>
+        <img src="https://i.gifer.com/HJkK.gif" ></img>
+      </div> )
 
     }else{
       return <BestPokemon pokemon={bestPokemon} />
