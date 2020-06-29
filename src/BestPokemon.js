@@ -12,7 +12,6 @@ const BestPokemonFetcher = (props) =>{
       return (<div>
         <img src="https://i.gifer.com/HJkK.gif" ></img>
       </div> )
-
     }else{
       return <BestPokemon pokemon={bestPokemon} />
     }
